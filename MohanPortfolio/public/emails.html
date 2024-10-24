@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .menubar {
+      height: 0; /* Start hidden */
+      overflow: hidden; /* Hide overflow */
+      transition: height 0.5s ease; /* Smooth transition */
+    }
+
+    .menubar.open {
+      height: 40rem; /* Set to desired height when open */
+    }
+
+    li {
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <nav class="w-[30rem] m-10 h-[55rem] fixed ">
+    <div class="-rotate-90 top-[25rem] rounded-br-full rounded-tl-full relative bg-black w-[50rem] align-middle items-center text-center -left-80 h-32 flex">
+      <h1 class="text-4xl font-bold text-lime-500 mx-auto font-serif">Mohan Kumar Portfolio</h1>
+      <button class="rotate-90 relative right-20" id="menuToggle">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="#34C759" class="size-9">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12" />
+        </svg>
+      </button>
+    </div>
+    <div class="bg-black menubar text-white relative top-7 left-40 rounded-tr-full rounded-br-full rounded-bl-full text-center p-5">
+      <ul class="p-2 text-center">
+        <li class="font-bold pt-16 text-xl">Home
+          <div class="border-b-8 rounded mx-auto w-12 border-lime-500 pt-1"></div>
+        </li>
+        <li class="font-bold pt-16 text-xl">About me
+          <div class="border-b-8 rounded mx-auto w-12 border-lime-500 pt-1"></div>
+        </li>
+        <li class="font-bold pt-16 text-xl">Skills
+          <div class="border-b-8 rounded mx-auto w-12 border-lime-500 pt-1"></div>
+        </li>
+        <li class="font-bold pt-16 text-xl">Projects
+          <div class="border-b-8 rounded mx-auto w-12 border-lime-500 pt-1"></div>
+        </li>
+        <li class="font-bold pt-16 text-xl">Certificates
+          <div class="border-b-8 rounded mx-auto w-12 border-lime-500 pt-1"></div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const menubar = document.querySelector('.menubar');
+
+    menuToggle.addEventListener('click', () => {
+      menubar.classList.toggle('open'); // Toggle the open class
+    });
+  </script>
+</body>
+</html>
